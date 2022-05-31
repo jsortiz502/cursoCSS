@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div x-data="{ open: false }">
+        <!-- Aqui se usa la funcion click para abrir el menu cuando queramos -->
+        <button x-on:click="open = !open">
+            Menu
+        </button>
+        <!-- Aquí se visualizaran los items que deseamos escribir -->
+        <nav x-show="open" x-on:click="open = false">
+            <ul>
+                <li>Item 1</li> 
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+                <li>Item 5</li>
+            </ul>
+        </nav>
+    </div>
+    <br>
+    <div
+    
+    x-data="{
+        search: '',
+        
+        items: ['Camiseta', 'Jean', 'Medias', 'Boxer'],
+ 
+        get filteredItems() {
+            return this.items.filter(
+                i => i.startsWith(this.search)
+            )
+        }
+    }"
+>
+    <input x-model="search" placeholder="Search...">
+    <!-- Anteriormente se mostro un evento para buscar items y si no encuentra 
+    el deseado no se realiza una busqueda y tambien se pide visualizar ese item -->
+    <ul>
+        <template x-for="item in filteredItems" :key="item">
+            <li x-text="item"></li>
+        </template>
+    </ul>
+</div>
+</body>
+</html>

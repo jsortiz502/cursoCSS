@@ -1,0 +1,11 @@
+					ETIQUETAS HTML
+
+<b>=texto en negrilla
+<i>=texto en curisva
+<strike>=texto en tachada
+<small>=texto pequeño
+<target=_BLANK>= abre el enlace en una pestaña nueva
+<ol>=Enumera las listas con numeros
+<video src="" controls>=Sirve para poner un video y el atributo control nos permite usar las opcion de video que nps ofrece el navegador
+<audio src="" controls>=Sirve para poner un audio y tambien se usa la etiqueta controls.
+Algunos tipos de type: color, range, date, time, etc
